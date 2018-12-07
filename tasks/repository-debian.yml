@@ -1,0 +1,37 @@
+---
+- name: "installing sury required packages"
+  apt:
+    name: "{{ package.name }}"
+    state: "{{ package.state }}"
+  loop: "{{ sury_repo_dep }}"
+  loop_control:
+    loop_var: package
+  when: sury_repo_state
+
+- name: "importing sury gpg key"
+  apt_key:
+    state: present
+    keyring: /etc/apt/trusted.gpg.d/sury.gpg
+    url: "{{ sury_repo_base_url }}/{{ sury_repo_name }}/apt.gpg"
+  when: sury_repo_state
+
+- name: "add sury repository"
+  template:
+    src: "repository-debian.j2"
+    dest: /etc/apt/sources.list.d/sury-{{ sury_repo_name }}.list
+    owner: root
+    group: root
+    mode: 0644
+  when: sury_repo_state
+  register: sury_repo_changed
+
+- name: "update debain repository cache"
+  apt:
+    update_cache: true
+  when: sury_repo_changed.changed
+
+- name: "remove sury repository"
+  file:
+    path: /etc/apt/sources.list.d/sury-{{ sury_repo_name }}.list
+    state: absent
+  when: not sury_repo_state

@@ -1,0 +1,18 @@
+---
+galaxy_info:
+  role_name: repo_sury
+  author: Peter Hudec
+  description: manage dovecot community repository
+  company: securCom, a.s.
+  license: BSD
+  min_ansible_version: 2.4
+  platforms:
+    - name: Debian
+      versions:
+        - jessie
+        - stretch
+  galaxy_tags:
+    - dovecot
+    - system
+    - repository
+dependencies: []

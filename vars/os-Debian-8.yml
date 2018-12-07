@@ -1,0 +1,18 @@
+---
+
+sury_repo_supported:
+  - php
+  - bind
+  - bird
+  - kea
+  - knot
+  - knot-lts
+  - knot-resolver
+  - nginx
+  - nginx-mainline
+  - wireguard
+
+sury_repo_dep:
+  - { 'name': 'apt-transport-https', 'state': 'present'}
+  - { 'name': 'ca-certificates', 'state': 'present'}
+  - { 'name': 'gnupg', 'state': 'present'}
