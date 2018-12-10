@@ -1,3 +1,6 @@
+[![Build Status](https://www.travis-ci.org/securCom/ansible-role_repo-sury.svg?branch=master)](https://www.travis-ci.org/securCom/ansible-role_repo-sury)
+[![GitHub release](https://img.shields.io/github/release/securCom/ansible-role_repo-sury.svg)](https://github.com/securCom/ansible-role_repo-sury)
+
 # Repo: Sury
 
 Manage  Sury repository collections
