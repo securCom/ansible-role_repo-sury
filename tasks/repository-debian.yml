@@ -25,7 +25,7 @@
   when: sury_repo_state
   register: sury_repo_changed
 
-- name: "update debain repository cache"
+- name: "update debain repository cache"  # noqa 503
   apt:
     update_cache: true
   when: sury_repo_changed.changed
