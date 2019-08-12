@@ -1,0 +1,15 @@
+---
+
+sury_repo_supported:
+  - apache2
+  - bird
+  - nginx
+  - nginx-mainline
+  - php
+  - qbittorrent
+  - wireguard
+
+sury_repo_dep:
+  - { 'name': 'apt-transport-https', 'state': 'present'}
+  - { 'name': 'ca-certificates', 'state': 'present'}
+  - { 'name': 'gnupg', 'state': 'present'}
