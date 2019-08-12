@@ -1,15 +1,13 @@
 ---
 
 sury_repo_supported:
-  - php
-  - bind
+  - apache2
   - bird
   - kea
-  - knot
-  - knot-lts
-  - knot-resolver
   - nginx
   - nginx-mainline
+  - php
+  - qbittorrent
   - wireguard
 
 sury_repo_dep:
